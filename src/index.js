@@ -16,6 +16,11 @@ class navButton {
         this.button = this.#createHTMLNode(navButtonData);
     }
 
+    /**
+     * 
+     * @param {object} navButtonData 
+     * @returns {HTMLElement}
+     */
     #createHTMLNode(navButtonData) {
         const navButton = document.createElement("button");
         navButton.setAttribute("id", navButtonData.name);
@@ -36,7 +41,9 @@ class navButton {
     };
 
     /**
-     * @param {Event} e
+     * 
+     * @param {Event} e 
+     * @returns {HTMLElement}
      */
     #switchTabs(e) {
         console.log(e);
@@ -45,12 +52,19 @@ class navButton {
         return this.contentDiv;
     }
 
+    /**
+     * 
+     */
     #populateTab() {
         const myP = document.createElement("p");
         myP.textContent = this.name;
         this.contentDiv.appendChild(myP);
     }
 
+    /**
+     * 
+     * @returns {HTMLElement}
+     */
     #deleteAllChildren() {
         while (this.contentDiv.firstChild) {
             this.contentDiv.removeChild(this.contentDiv.firstChild);
@@ -60,11 +74,13 @@ class navButton {
 }
 
 const pageBody = document.querySelector("body");
+
 const navDiv = document.createElement("nav");
 navDiv.setAttribute("id", "nav");
+
 const contentDiv = document.createElement("main");
-console.log(contentDiv);
 contentDiv.setAttribute("id", "content");
+
 pageBody.appendChild(navDiv);
 pageBody.appendChild(contentDiv);
 
