@@ -31,7 +31,7 @@ class navButton {
      */
     #setFunction(navButtonNode) {
         navButtonNode.addEventListener("click", (e) => {
-            this.#switchTabs();
+            this.#switchTabs(e);
         })
     };
 
@@ -48,6 +48,7 @@ class navButton {
     #populateTab() {
         const myP = document.createElement("p");
         myP.textContent = this.name;
+        this.contentDiv.appendChild(myP);
     }
 
     #deleteAllChildren() {
