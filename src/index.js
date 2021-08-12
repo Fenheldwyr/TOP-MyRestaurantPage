@@ -74,5 +74,22 @@ const homeButtonData = {
     contentDiv: contentDiv,
 }
 
+const menuButtonData = {
+    name: "Menu",
+    pageJSON: null,
+    contentDiv: contentDiv,
+}
+
+const contactButtonData = {
+    name: "Contact",
+    pageJSON: null,
+    contentDiv: contentDiv,
+}
+
 const homeButton = new navButton(homeButtonData);
+const menuButton = new navButton(menuButtonData);
+const contactButton = new navButton(contactButtonData);
+
 navDiv.appendChild(homeButton.button);
+navDiv.appendChild(menuButton.button);
+navDiv.appendChild(contactButton.button);
