@@ -46,7 +46,8 @@ class navButton {
     }
 
     #populateTab() {
-
+        const myP = document.createElement("p");
+        myP.textContent = this.name;
     }
 
     #deleteAllChildren() {
@@ -58,9 +59,12 @@ class navButton {
 }
 
 const pageBody = document.querySelector("body");
+const navDiv = document.createElement("nav");
+navDiv.setAttribute("id", "nav");
 const contentDiv = document.createElement("main");
 console.log(contentDiv);
 contentDiv.setAttribute("id", "content");
+pageBody.appendChild(navDiv);
 pageBody.appendChild(contentDiv);
 
 const homeButtonData = {
@@ -70,4 +74,4 @@ const homeButtonData = {
 }
 
 const homeButton = new navButton(homeButtonData);
-contentDiv.appendChild(homeButton.button);
+navDiv.appendChild(homeButton.button);
