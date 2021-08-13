@@ -1,0 +1,15 @@
+{
+    "heading": {
+        "id": "menu-heading",
+        "htmlTag": "h2",
+        "styles": {},
+        "content": "Here are the recipes I have come up with"
+    },
+
+    "allergyNotice": {
+        "id": "allergy-notice",
+        "htmlTag": "small",
+        "styles": {},
+        "content": "Please inform me if you have any allergies."
+    }
+}
