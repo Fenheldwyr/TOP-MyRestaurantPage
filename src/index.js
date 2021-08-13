@@ -1,19 +1,22 @@
 import "./mvp.css";
 
+// represents navigation buttons
 class navButton {
     /**
      * 
      * @param {object} navButtonData - holds nav button info
-     * @param {string} navButtonData.name - the button's name and inner text
-     * @param {JSON} navButtonData.pageJSON - holds the tab's main content
-     * @param {HTMLDivElement} navButtonData.contentDiv
-     * @param {HTMLButtonElement} button - the button GUI 
+     * @property {string} name - the button's name and inner text
+     * @property {JSON} pageJSON - holds the tab's main content
+     * @property {HTMLDivElement} contentDiv - the page's <main> tag, where the page content will go
+     * @property {HTMLButtonElement} button - the button GUI 
+     * @property {boolean} isPageActive - records whether the page has been displayed
      */    
     constructor(navButtonData) {
         this.name = navButtonData.name;
         this.pageJSON = navButtonData.pageJSON;
         this.contentDiv = navButtonData.contentDiv;
         this.button = this.#createHTMLNode(navButtonData);
+        this.isPageActive = false;
     }
 
     /**
@@ -41,19 +44,21 @@ class navButton {
     };
 
     /**
-     * 
+     * updates our website's content with information relevant to the page they have navigated to
      * @param {Event} e 
      * @returns {HTMLElement}
      */
     #switchTabs(e) {
         console.log(e);
+        // don't bother generating the page if it is already on display
+        if (!this.isPageActive) return; 
         const clearedDiv = this.#deleteAllChildren();
         this.#populateTab();
         return this.contentDiv;
     }
 
     /**
-     * 
+     * displays our page's contents
      */
     #populateTab() {
         const myP = document.createElement("p");
@@ -62,7 +67,7 @@ class navButton {
     }
 
     /**
-     * 
+     * clears the page, ready for new content
      * @returns {HTMLElement}
      */
     #deleteAllChildren() {
