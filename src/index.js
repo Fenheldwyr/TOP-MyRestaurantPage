@@ -1,23 +1,21 @@
 import "./mvp.css";
 import * as homeJSON from "./home.json";
+import * as menuJSON from "./menu.json";
 
-// represents navigation buttons
 class navButton {
-    /**
-     * 
-     * @param {object} navButtonData - holds nav button info
-     * @property {string} name - the button's name and inner text
-     * @property {JSON} pageJSON - holds the tab's main content
-     * @property {HTMLDivElement} contentDiv - the page's <main> tag, where the page content will go
-     * @property {HTMLButtonElement} button - the button GUI 
-     * @property {boolean} isPageActive - records whether the page has been displayed
-     */    
     constructor(navButtonData) {
-        this.name = navButtonData.name;
-        this.pageJSON = navButtonData.pageJSON;
-        this.contentDiv = navButtonData.contentDiv;
-        this.button = this.#createButton(navButtonData);
-        this.isPageActive = false;
+        this.ID = navButtonData.ID,
+        this.GUI = navButtonData.GUI,
+        this.pageJSON = navButtonData.pageJSON
+    }
+}
+
+class navigation {
+    constructor(navigationData) {
+        this.contentDiv = navigationData.contentDiv;
+        this.navButtonData = navigationData.navButtonData;
+        this.navButtons = this.#createButtons(this.navButtonData);
+        this.activePage = this.navButtons.homeButton;
     }
 
     /**
@@ -25,12 +23,21 @@ class navButton {
      * @param {object} navButtonData 
      * @returns {HTMLElement}
      */
-    #createButton(navButtonData) {
-        const navButton = document.createElement("button");
-        navButton.setAttribute("id", navButtonData.name);
-        navButton.textContent = navButtonData.name;
-        this.#setFunction(navButton);
-        return navButton;
+     #createButtons(navButtonData) {
+        let buttons = {};
+        for (const buttonData of navButtonData) {
+            const buttonGUI = document.createElement("button");
+            buttonGUI.setAttribute("id", buttonData.name);
+            buttonGUI.textContent = buttonData.name;
+            const buttonObj = new navButton({
+                ID: buttonData.name,
+                GUI: buttonGUI,
+                pageJSON: buttonData.pageJSON,
+            })
+            this.#setFunction(buttonGUI, buttonObj);
+            buttons[buttonData.name] = buttonObj;
+        }
+        return buttons;
     }
 
     /**
@@ -38,9 +45,9 @@ class navButton {
      * @param {HTMLElement} navButtonNode 
      * @param {navButton} navButtonObj 
      */
-    #setFunction(navButtonNode) {
+    #setFunction(navButtonNode, navButtonObj) {
         navButtonNode.addEventListener("click", (e) => {
-            this.#switchTabs(e);
+            this.#switchTabs(e, navButtonObj);
         })
     };
 
@@ -49,24 +56,25 @@ class navButton {
      * @param {Event} e 
      * @returns {HTMLElement}
      */
-    #switchTabs(e) {
+    #switchTabs(e, navButtonObj) {
         console.log(e);
         // don't bother generating the page if it is already on display
-        if (this.isPageActive) return; 
+        if (this.activePage === navButtonObj.ID) return; 
         const clearedDiv = this.#deleteAllChildren();
-        this.#populateTab();
+        this.#populateTab(navButtonObj.pageJSON);
+        this.activePage = navButtonObj.ID;
         return this.contentDiv;
     }
 
     /**
      * displays our page's contents
      */
-    #populateTab() {
+    #populateTab(pageJSON) {
         // const myP = document.createElement("p");
         // myP.textContent = this.name;
         // this.contentDiv.appendChild(myP);
-        for (const elementKey in this.pageJSON) {
-            const elementData = this.pageJSON[elementKey];
+        for (const elementKey in pageJSON) {
+            const elementData = pageJSON[elementKey];
             const element = this.#makeHTMLElement(elementData);
             if (element) {
                 this.contentDiv.appendChild(element);
@@ -85,7 +93,7 @@ class navButton {
         element.textContent = content;
         return element;
     }
-
+    
     /**
      * clears the page, ready for new content
      * @returns {HTMLElement}
@@ -117,7 +125,7 @@ const homeButtonData = {
 
 const menuButtonData = {
     name: "Menu",
-    pageJSON: null,
+    pageJSON: menuJSON,
     contentDiv: contentDiv,
 }
 
@@ -127,10 +135,21 @@ const contactButtonData = {
     contentDiv: contentDiv,
 }
 
-const homeButton = new navButton(homeButtonData);
-const menuButton = new navButton(menuButtonData);
-const contactButton = new navButton(contactButtonData);
+const navBarData = {
+    contentDiv: contentDiv,
+    navButtonData: [
+        homeButtonData,
+        menuButtonData,
+        contactButtonData
+    ],
+}
 
-navDiv.appendChild(homeButton.button);
-navDiv.appendChild(menuButton.button);
-navDiv.appendChild(contactButton.button);
+const navigationBar = new navigation(navBarData);
+
+// const homeButton = new navButton(homeButtonData);
+// const menuButton = new navButton(menuButtonData);
+// const contactButton = new navButton(contactButtonData);
+
+navDiv.appendChild(navigationBar.navButtons.Home.GUI);
+navDiv.appendChild(navigationBar.navButtons.Menu.GUI);
+navDiv.appendChild(navigationBar.navButtons.Contact.GUI);
