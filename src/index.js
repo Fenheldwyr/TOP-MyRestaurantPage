@@ -1,4 +1,5 @@
 import "./mvp.css";
+import * as homeJSON from "./home.json";
 
 // represents navigation buttons
 class navButton {
@@ -15,7 +16,7 @@ class navButton {
         this.name = navButtonData.name;
         this.pageJSON = navButtonData.pageJSON;
         this.contentDiv = navButtonData.contentDiv;
-        this.button = this.#createHTMLNode(navButtonData);
+        this.button = this.#createButton(navButtonData);
         this.isPageActive = false;
     }
 
@@ -24,7 +25,7 @@ class navButton {
      * @param {object} navButtonData 
      * @returns {HTMLElement}
      */
-    #createHTMLNode(navButtonData) {
+    #createButton(navButtonData) {
         const navButton = document.createElement("button");
         navButton.setAttribute("id", navButtonData.name);
         navButton.textContent = navButtonData.name;
@@ -51,7 +52,7 @@ class navButton {
     #switchTabs(e) {
         console.log(e);
         // don't bother generating the page if it is already on display
-        if (!this.isPageActive) return; 
+        if (this.isPageActive) return; 
         const clearedDiv = this.#deleteAllChildren();
         this.#populateTab();
         return this.contentDiv;
@@ -61,9 +62,28 @@ class navButton {
      * displays our page's contents
      */
     #populateTab() {
-        const myP = document.createElement("p");
-        myP.textContent = this.name;
-        this.contentDiv.appendChild(myP);
+        // const myP = document.createElement("p");
+        // myP.textContent = this.name;
+        // this.contentDiv.appendChild(myP);
+        for (const elementKey in this.pageJSON) {
+            const elementData = this.pageJSON[elementKey];
+            const element = this.#makeHTMLElement(elementData);
+            if (element) {
+                this.contentDiv.appendChild(element);
+            }
+        }
+    }
+
+    #makeHTMLElement(elementData) {
+        const id = elementData.id;
+        const htmlTag = elementData.htmlTag;
+        const styles = elementData.styles;
+        const content = elementData.content;
+
+        const element = document.createElement(htmlTag);
+        element.setAttribute("id", id);
+        element.textContent = content;
+        return element;
     }
 
     /**
@@ -91,7 +111,7 @@ pageBody.appendChild(contentDiv);
 
 const homeButtonData = {
     name: "Home",
-    pageJSON: null,
+    pageJSON: homeJSON,
     contentDiv: contentDiv,
 }
 
