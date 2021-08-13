@@ -4,5 +4,12 @@
         "htmlTag": "h2",
         "styles": {},
         "content": "Hello! Welcome to our site!"
+    },
+
+    "mainBody": {
+        "id": "home-content",
+        "htmlTag": "p",
+        "styles": {},
+        "content": "We serve the best dishes in Elwynn."
     }
 }
