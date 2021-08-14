@@ -1,6 +1,7 @@
 import "./mvp.css";
 import * as homeJSON from "./home.json";
 import * as menuJSON from "./menu.json";
+import * as contactJSON from "./contact.json";
 
 class navButton {
     constructor(navButtonData) {
@@ -131,7 +132,7 @@ const menuButtonData = {
 
 const contactButtonData = {
     name: "Contact",
-    pageJSON: null,
+    pageJSON: contactJSON,
     contentDiv: contentDiv,
 }
 
