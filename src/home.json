@@ -3,14 +3,28 @@
         "id": "home-header",
         "htmlTag": "h2",
         "styles": {},
-        "content": "Hello! Welcome to our site!"
+        "content": "Let's make camp!"
     },
 
-    "mainBody": {
-        "id": "home-content",
+    "openingStatement": {
+        "id": "opening-statement",
         "htmlTag": "p",
         "styles": {},
-        "content": "We serve the best dishes in Elwynn."
+        "content": "Tired of eating nothing but instant noodles all day? I, Ignis Scientia, would free you from your microwave, and treat you and your dearest companions to a suite of gastrointenstinal delights, all prefected by yours truly.*"
+    },
+
+    "middleContent": {
+        "id": "middle-content",
+        "htmlTag": "p",
+        "styles": {},
+        "content": "These dishes have been honed over months of enlightening travel, and you can rest assured that all of my meals source only the choicest ingredients. Nutritious, filling, and most of all, tasteh."
+    },
+
+    "endContent": {
+        "id": "end-content",
+        "htmlTag": "p",
+        "styles": {},
+        "content": "Please browse my menu and get in touch. You most assuredly will not regret it."
     },
 
     "legalDisclaimer": {
