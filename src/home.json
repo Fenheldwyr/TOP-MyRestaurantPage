@@ -11,5 +11,12 @@
         "htmlTag": "p",
         "styles": {},
         "content": "We serve the best dishes in Elwynn."
+    },
+
+    "legalDisclaimer": {
+        "id": "legal-disclaimer",
+        "htmlTag": "small",
+        "styles": {},
+        "content": "All intellectual property, including art, characters, likenesses, etc., is copyright of Square Enix, unless otherwise stated. This site is a fan project built purely as practice for myself."
     }
 }
