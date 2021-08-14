@@ -151,11 +151,23 @@ const navBarData = {
 
 const navigationBar = new navigation(navBarData);
 
-// const homeButton = new navButton(homeButtonData);
-// const menuButton = new navButton(menuButtonData);
-// const contactButton = new navButton(contactButtonData);
-
 navDiv.appendChild(navigationBar.navButtons.Home.GUI);
 navDiv.appendChild(navigationBar.navButtons.Menu.GUI);
 navDiv.appendChild(navigationBar.navButtons.Contact.GUI);
 
+const veggieStewImg = new Image();
+veggieStewImg.src = veggieStew;
+
+const grilledTrevallyImg = new Image();
+grilledTrevallyImg.src = grilledTrevally;
+
+const steamedFishImg = new Image();
+steamedFishImg.src = steamedFish;
+
+const mysteryMeatImg = new Image();
+mysteryMeatImg.src = mysteryMeat;
+
+contentDiv.appendChild(veggieStewImg);
+contentDiv.appendChild(grilledTrevallyImg);
+contentDiv.appendChild(steamedFishImg);
+contentDiv.appendChild(mysteryMeatImg);
