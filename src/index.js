@@ -2,6 +2,10 @@ import "./mvp.css";
 import * as homeJSON from "./home.json";
 import * as menuJSON from "./menu.json";
 import * as contactJSON from "./contact.json";
+import veggieStew from "./images/Veggie_Medley_Stew.webp";
+import steamedFish from "./images/Oil-Drizzled_Steamed_Fish.webp";
+import mysteryMeat from "./images/Mystery_Meat_Sushi.webp";
+import grilledTrevally from "./images/Grilled_Wild_Trevally.webp";
 
 class navButton {
     constructor(navButtonData) {
@@ -76,23 +80,11 @@ class navigation {
         // this.contentDiv.appendChild(myP);
         for (const elementKey in pageJSON) {
             const elementData = pageJSON[elementKey];
-            const element = this.#makeHTMLElement(elementData);
+            const element = makeHTMLElement(elementData);
             if (element) {
                 this.contentDiv.appendChild(element);
             }
         }
-    }
-
-    #makeHTMLElement(elementData) {
-        const id = elementData.id;
-        const htmlTag = elementData.htmlTag;
-        const styles = elementData.styles;
-        const content = elementData.content;
-
-        const element = document.createElement(htmlTag);
-        element.setAttribute("id", id);
-        element.textContent = content;
-        return element;
     }
     
     /**
@@ -105,6 +97,18 @@ class navigation {
         }
         return this.contentDiv;
     }
+}
+
+function makeHTMLElement(elementData) {
+    const id = elementData.id;
+    const htmlTag = elementData.htmlTag;
+    const styles = elementData.styles;
+    const content = elementData.content;
+
+    const element = document.createElement(htmlTag);
+    element.setAttribute("id", id);
+    element.textContent = content;
+    return element;
 }
 
 const pageBody = document.querySelector("body");
@@ -154,3 +158,4 @@ const navigationBar = new navigation(navBarData);
 navDiv.appendChild(navigationBar.navButtons.Home.GUI);
 navDiv.appendChild(navigationBar.navButtons.Menu.GUI);
 navDiv.appendChild(navigationBar.navButtons.Contact.GUI);
+
