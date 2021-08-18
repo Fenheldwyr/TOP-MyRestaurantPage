@@ -22,13 +22,8 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-                // type: "asset/resource",
                 use: [
                     {
-                        // loader: "url-loader",
-                        // options: {
-                        //     limit: 8192,
-                        // },
                         loader: "file-loader",
                         options: {
                             name: "images/[name].[ext]"
@@ -41,7 +36,6 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist"),
-        //assetModuleFilename: "images/[name].[ext]",
         clean: true,
     },
 };
