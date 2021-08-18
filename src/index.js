@@ -1,4 +1,5 @@
 import "./mvp.css";
+import "./misc.css";
 import homeJSON from "./home.json";
 import menuJSON from "./menu.json";
 import contactJSON from "./contact.json";
@@ -104,12 +105,21 @@ function makeHTMLElement(elementData) {
     const styles = elementData.styles;
     const content = elementData.content;
     const src = elementData.src;
+    const classes = elementData.classes;
 
     const element = document.createElement(htmlTag);
     element.setAttribute("id", id);
     element.textContent = content;
     if (src) {
         element.setAttribute("src", src);
+    }
+    if (Object.keys(styles).length > 0) {
+        element.setAttribute("style", styles);
+    }
+    if (classes) {
+        for (const key in classes) {
+            element.classList.add(classes[key]);
+        }
     }
     return element;
 }
