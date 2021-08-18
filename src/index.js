@@ -2,10 +2,11 @@ import "./mvp.css";
 import homeJSON from "./home.json";
 import menuJSON from "./menu.json";
 import contactJSON from "./contact.json";
-import veggieStew from "./images/Veggie_Medley_Stew.webp";
-import steamedFish from "./images/Oil-Drizzled_Steamed_Fish.webp";
-import mysteryMeat from "./images/Mystery_Meat_Sushi.webp";
-import grilledTrevally from "./images/Grilled_Wild_Trevally.webp";
+function importAll(r) {
+    r.keys().forEach(r);
+}
+// imports all images
+importAll(require.context("./images/", true, /\.(png|svg|jpg|jpeg|gif|webp)$/))
 
 class navButton {
     constructor(navButtonData) {
@@ -156,20 +157,3 @@ const navigationBar = new navigation(navBarData);
 navDiv.appendChild(navigationBar.navButtons.Home.GUI);
 navDiv.appendChild(navigationBar.navButtons.Menu.GUI);
 navDiv.appendChild(navigationBar.navButtons.Contact.GUI);
-
-const veggieStewImg = new Image();
-veggieStewImg.src = veggieStew;
-
-const grilledTrevallyImg = new Image();
-grilledTrevallyImg.src = grilledTrevally;
-
-const steamedFishImg = new Image();
-steamedFishImg.src = steamedFish;
-
-const mysteryMeatImg = new Image();
-mysteryMeatImg.src = mysteryMeat;
-
-// contentDiv.appendChild(veggieStewImg);
-// contentDiv.appendChild(grilledTrevallyImg);
-// contentDiv.appendChild(steamedFishImg);
-// contentDiv.appendChild(mysteryMeatImg);
