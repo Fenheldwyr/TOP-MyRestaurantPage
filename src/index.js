@@ -75,9 +75,6 @@ class navigation {
      * displays our page's contents
      */
     #populateTab(pageJSON) {
-        // const myP = document.createElement("p");
-        // myP.textContent = this.name;
-        // this.contentDiv.appendChild(myP);
         for (const elementKey in pageJSON) {
             const elementData = pageJSON[elementKey];
             const element = makeHTMLElement(elementData);
@@ -167,7 +164,7 @@ steamedFishImg.src = steamedFish;
 const mysteryMeatImg = new Image();
 mysteryMeatImg.src = mysteryMeat;
 
-contentDiv.appendChild(veggieStewImg);
-contentDiv.appendChild(grilledTrevallyImg);
-contentDiv.appendChild(steamedFishImg);
-contentDiv.appendChild(mysteryMeatImg);
+// contentDiv.appendChild(veggieStewImg);
+// contentDiv.appendChild(grilledTrevallyImg);
+// contentDiv.appendChild(steamedFishImg);
+// contentDiv.appendChild(mysteryMeatImg);
