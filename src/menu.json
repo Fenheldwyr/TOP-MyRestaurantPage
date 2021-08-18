@@ -3,7 +3,7 @@
         "id": "menu-heading",
         "htmlTag": "h2",
         "styles": {},
-        "content": "Here are the recipes I have come up with"
+        "content": "Here are the recipes I have come up with:"
     },
 
     "allergyNotice": {
@@ -11,5 +11,12 @@
         "htmlTag": "small",
         "styles": {},
         "content": "Please inform me if you have any allergies."
+    },
+
+    "foodMenu": {
+        "id": "food-menu",
+        "htmlTag": "section",
+        "styles": {},
+        "content": ""
     }
 }
