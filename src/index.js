@@ -1,7 +1,7 @@
 import "./mvp.css";
-import * as homeJSON from "./home.json";
-import * as menuJSON from "./menu.json";
-import * as contactJSON from "./contact.json";
+import homeJSON from "./home.json";
+import menuJSON from "./menu.json";
+import contactJSON from "./contact.json";
 import veggieStew from "./images/Veggie_Medley_Stew.webp";
 import steamedFish from "./images/Oil-Drizzled_Steamed_Fish.webp";
 import mysteryMeat from "./images/Mystery_Meat_Sushi.webp";
