@@ -102,10 +102,14 @@ function makeHTMLElement(elementData) {
     const htmlTag = elementData.htmlTag;
     const styles = elementData.styles;
     const content = elementData.content;
+    const src = elementData.src;
 
     const element = document.createElement(htmlTag);
     element.setAttribute("id", id);
     element.textContent = content;
+    if (src) {
+        element.setAttribute("src", src);
+    }
     return element;
 }
 

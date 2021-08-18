@@ -23,11 +23,19 @@
         "content": ""
     },
 
-    "sampleItem": {
-        "id": "sample-item",
+    "mysteryMeatEntry": {
+        "id": "mystery-meat-entry",
         "parent": "food-menu",
-        "htmlTag": "p",
+        "htmlTag": "article",
         "styles": {},
-        "content": "Hello!"
+        "content": ""
+    },
+
+    "mysteryMeatImage": {
+        "id": "mystery-meat-image",
+        "parent": "mystery-meat-entry",
+        "htmlTag": "img",
+        "styles": {},
+        "src": "images/Mystery_Meat_Sushi.webp"
     }
 }

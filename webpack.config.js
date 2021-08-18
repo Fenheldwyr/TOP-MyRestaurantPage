@@ -25,10 +25,14 @@ module.exports = {
                 // type: "asset/resource",
                 use: [
                     {
-                        loader: "url-loader",
+                        // loader: "url-loader",
+                        // options: {
+                        //     limit: 8192,
+                        // },
+                        loader: "file-loader",
                         options: {
-                            limit: 8192,
-                        },
+                            name: "images/[name].[ext]"
+                        }
                     },
                 ],
             },
@@ -37,6 +41,7 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist"),
+        //assetModuleFilename: "images/[name].[ext]",
         clean: true,
     },
 };
