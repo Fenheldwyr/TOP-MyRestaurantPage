@@ -1,0 +1,26 @@
+.menu-entry {
+    display: grid;
+    grid-template-areas: 
+        "image heading"
+        "image description";
+    align-self: start;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.menu-image {
+    grid-area: image;
+    align-self: start;
+}
+
+.menu-heading {
+    grid-area: heading;
+    align-self: start;
+    margin-left: 10px;
+}
+
+.menu-description {
+    grid-area: description;
+    align-self: start;
+    margin-left: 10px;
+}
