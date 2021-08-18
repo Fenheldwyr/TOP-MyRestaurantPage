@@ -1,6 +1,7 @@
 {
     "heading": {
         "id": "contact-header",
+        "parent": "content",
         "htmlTag": "h2",
         "styles": {},
         "content": "My contact information"

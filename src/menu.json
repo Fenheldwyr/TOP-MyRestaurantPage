@@ -1,6 +1,7 @@
 {
     "heading": {
         "id": "menu-heading",
+        "parent": "content",
         "htmlTag": "h2",
         "styles": {},
         "content": "Here are the recipes I have come up with:"
@@ -8,6 +9,7 @@
 
     "allergyNotice": {
         "id": "allergy-notice",
+        "parent": "content",
         "htmlTag": "small",
         "styles": {},
         "content": "Please inform me if you have any allergies."
@@ -15,8 +17,17 @@
 
     "foodMenu": {
         "id": "food-menu",
+        "parent": "content",
         "htmlTag": "section",
         "styles": {},
         "content": ""
+    },
+
+    "sampleItem": {
+        "id": "sample-item",
+        "parent": "food-menu",
+        "htmlTag": "p",
+        "styles": {},
+        "content": "Hello!"
     }
 }

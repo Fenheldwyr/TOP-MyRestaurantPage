@@ -78,8 +78,9 @@ class navigation {
         for (const elementKey in pageJSON) {
             const elementData = pageJSON[elementKey];
             const element = makeHTMLElement(elementData);
+            const parentElement = document.querySelector(`#${elementData.parent}`)
             if (element) {
-                this.contentDiv.appendChild(element);
+                parentElement.appendChild(element);
             }
         }
     }
