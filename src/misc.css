@@ -32,3 +32,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+#content {
+    color: white;
+    background: #000000b3;
+}
