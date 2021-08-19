@@ -43,10 +43,10 @@
 
     "meta": {
         "background": {
-            "parent": "html",
+            "parent": "body",
             "image": "./images/igor-staritsin-8-finalfantasy-dmp-igorstaritsin.jpg",
             "classes": [
-                ""
+                "background-image"
             ]
         }
     }
