@@ -202,7 +202,13 @@
     },
 
     "meta": {
-        
+        "background": {
+            "parent": "body",
+            "image": "./images/restaurant.webp",
+            "classes": [
+                "background-image"
+            ]
+        }
     }
 
 }
