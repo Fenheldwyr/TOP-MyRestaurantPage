@@ -204,7 +204,7 @@
     "meta": {
         "background": {
             "parent": "body",
-            "image": "./images/restaurant.webp",
+            "image": "./images/restaurant-blur.webp",
             "classes": [
                 "background-image"
             ]

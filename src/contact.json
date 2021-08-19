@@ -46,7 +46,7 @@
     "meta": {
         "background": {
             "parent": "body",
-            "image": "./images/brotherhood_eating.webp",
+            "image": "./images/brotherhood-eating-blur.webp",
             "classes": [
                 "background-image"
             ]
