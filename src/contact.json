@@ -1,44 +1,49 @@
 {
-    "heading": {
-        "id": "contact-header",
-        "parent": "content",
-        "htmlTag": "h2",
-        "styles": {},
-        "content": "You can get in touch with me for bookings, queries, meal/wine pairing advice, and casual chats on my social media:"
+    "elements": {
+        "heading": {
+            "id": "contact-header",
+            "parent": "content",
+            "htmlTag": "h2",
+            "styles": {},
+            "content": "You can get in touch with me for bookings, queries, meal/wine pairing advice, and casual chats on my social media:"
+        },
+    
+        "facebookEntry": {
+            "id": "facebook-entry",
+            "parent": "content",
+            "htmlTag": "h3",
+            "styles": {},
+            "content": ""
+        },
+    
+        "facebookLink": {
+            "id": "facebook-link",
+            "parent": "facebook-entry",
+            "htmlTag": "a",
+            "styles": {},
+            "content": "Facebook",
+            "href": "https://www.google.com/search?q=stick+bugs"
+        },
+    
+        "twitterEntry": {
+            "id": "twitter-entry",
+            "parent": "content",
+            "htmlTag": "h3",
+            "styles": {},
+            "content": ""
+        },
+    
+        "twitter-link": {
+            "id": "twitter-link",
+            "parent": "twitter-entry",
+            "htmlTag": "a",
+            "styles": {},
+            "content": "Twitter",
+            "href": "https://www.google.com/search?q=stick+bugs"
+        }
     },
 
-    "facebookEntry": {
-        "id": "facebook-entry",
-        "parent": "content",
-        "htmlTag": "h3",
-        "styles": {},
-        "content": ""
-    },
+    "meta": {
 
-    "facebookLink": {
-        "id": "facebook-link",
-        "parent": "facebook-entry",
-        "htmlTag": "a",
-        "styles": {},
-        "content": "Facebook",
-        "href": "https://www.google.com/search?q=stick+bugs"
-    },
-
-    "twitterEntry": {
-        "id": "twitter-entry",
-        "parent": "content",
-        "htmlTag": "h3",
-        "styles": {},
-        "content": ""
-    },
-
-    "twitter-link": {
-        "id": "twitter-link",
-        "parent": "twitter-entry",
-        "htmlTag": "a",
-        "styles": {},
-        "content": "Twitter",
-        "href": "https://www.google.com/search?q=stick+bugs"
     }
-
 }

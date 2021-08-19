@@ -1,41 +1,47 @@
 {
-    "heading": {
-        "id": "home-header",
-        "parent": "content",
-        "htmlTag": "h2",
-        "styles": {},
-        "content": "Let's make camp!"
+    "elements": {
+        "heading": {
+            "id": "home-header",
+            "parent": "content",
+            "htmlTag": "h2",
+            "styles": {},
+            "content": "Let's make camp!"
+        },
+    
+        "openingStatement": {
+            "id": "opening-statement",
+            "parent": "content",
+            "htmlTag": "p",
+            "styles": {},
+            "content": "Tired of eating nothing but instant noodles all day? I, Ignis Scientia, would free you from your microwave, and treat you and your dearest companions to a suite of gastrointenstinal delights, all perfected by yours truly.*"
+        },
+    
+        "middleContent": {
+            "id": "middle-content",
+            "parent": "content",
+            "htmlTag": "p",
+            "styles": {},
+            "content": "These dishes have been honed over months of enlightening travel, and you can rest assured that all of my meals source only the choicest ingredients. Nutritious, filling, and most of all, tasteh."
+        },
+    
+        "endContent": {
+            "id": "end-content",
+            "parent": "content",
+            "htmlTag": "p",
+            "styles": {},
+            "content": "Please browse my menu and get in touch. You most assuredly will not regret it."
+        },
+    
+        "legalDisclaimer": {
+            "id": "legal-disclaimer",
+            "parent": "content",
+            "htmlTag": "small",
+            "styles": {},
+            "content": "All intellectual property, including art, characters, likenesses, etc., is copyright of Square Enix, unless otherwise stated. This site is a fan project built purely as practice for myself."
+        }
     },
 
-    "openingStatement": {
-        "id": "opening-statement",
-        "parent": "content",
-        "htmlTag": "p",
-        "styles": {},
-        "content": "Tired of eating nothing but instant noodles all day? I, Ignis Scientia, would free you from your microwave, and treat you and your dearest companions to a suite of gastrointenstinal delights, all perfected by yours truly.*"
-    },
-
-    "middleContent": {
-        "id": "middle-content",
-        "parent": "content",
-        "htmlTag": "p",
-        "styles": {},
-        "content": "These dishes have been honed over months of enlightening travel, and you can rest assured that all of my meals source only the choicest ingredients. Nutritious, filling, and most of all, tasteh."
-    },
-
-    "endContent": {
-        "id": "end-content",
-        "parent": "content",
-        "htmlTag": "p",
-        "styles": {},
-        "content": "Please browse my menu and get in touch. You most assuredly will not regret it."
-    },
-
-    "legalDisclaimer": {
-        "id": "legal-disclaimer",
-        "parent": "content",
-        "htmlTag": "small",
-        "styles": {},
-        "content": "All intellectual property, including art, characters, likenesses, etc., is copyright of Square Enix, unless otherwise stated. This site is a fan project built purely as practice for myself."
+    "meta": {
+        
     }
 }

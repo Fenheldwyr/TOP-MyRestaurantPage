@@ -1,202 +1,208 @@
 {
-    "heading": {
-        "id": "menu-heading",
-        "parent": "content",
-        "htmlTag": "h2",
-        "styles": {},
-        "content": "Here are the recipes I have come up with:"
+    "elements": {
+        "heading": {
+            "id": "menu-heading",
+            "parent": "content",
+            "htmlTag": "h2",
+            "styles": {},
+            "content": "Here are the recipes I have come up with:"
+        },
+    
+        "allergyNotice": {
+            "id": "allergy-notice",
+            "parent": "content",
+            "htmlTag": "small",
+            "styles": {},
+            "content": "Please inform me if you have any allergies."
+        },
+    
+        "foodMenu": {
+            "id": "food-menu",
+            "parent": "content",
+            "htmlTag": "section",
+            "styles": "flex-direction: column;",
+            "content": ""
+        },
+    
+        "mysteryMeatEntry": {
+            "id": "mystery-meat-entry",
+            "parent": "food-menu",
+            "htmlTag": "article",
+            "styles": {},
+            "classes": [
+                "menu-entry"
+            ],
+            "content": ""
+        },
+    
+        "mysteryMeatImage": {
+            "id": "mystery-meat-image",
+            "parent": "mystery-meat-entry",
+            "htmlTag": "img",
+            "styles": {},
+            "classes": [
+                "menu-image"
+            ],
+            "src": "images/Mystery_Meat_Sushi.webp"
+        },
+    
+        "mysteryMeatHeading": {
+            "id": "mystery-meat-heading",
+            "parent": "mystery-meat-entry",
+            "htmlTag": "h3",
+            "styles": {},
+            "classes": [
+                "menu-heading"
+            ],
+            "content": "Mystery Meat Sushi"
+        },
+    
+        "mysteryMeatDescription": {
+            "id": "mystery-meat-description",
+            "parent": "mystery-meat-entry",
+            "htmlTag": "p",
+            "styles": {},
+            "classes": [
+                "menu-description"
+            ],
+            "content": "This is my famed Mystery Meat Sushi."
+        },
+    
+        "grilledTrevallyEntry": {
+            "id": "grilled-trevally-entry",
+            "parent": "food-menu",
+            "htmlTag": "article",
+            "styles": {},
+            "classes": [
+                "menu-entry"
+            ],
+            "content": ""
+        },
+    
+        "grilledTrevallyImage": {
+            "id": "grilld-trevally-image",
+            "parent": "grilled-trevally-entry",
+            "htmlTag": "img",
+            "styles": {},
+            "classes": [
+                "menu-image"
+            ],
+            "src": "images/Grilled_Wild_Trevally.webp"
+        },
+    
+        "grilledTrevallyHeading": {
+            "id": "grilled-trevally-heading",
+            "parent": "grilled-trevally-entry",
+            "htmlTag": "h3",
+            "styles": {},
+            "classes": [
+                "menu-heading"
+            ],
+            "content": "Grilled Wild Trevally"
+        },
+    
+        "grilledTrevallyDescription": {
+            "id": "grilled-trevally-description",
+            "parent": "grilled-trevally-entry",
+            "htmlTag": "p",
+            "styles": {},
+            "classes": [
+                "menu-description"
+            ],
+            "content": "This is my famed Grilled Wild Trevally. None of that farm-reared business, I guarantee."
+        },
+    
+        "steamedFishEntry": {
+            "id": "steamed-fish-entry",
+            "parent": "food-menu",
+            "htmlTag": "article",
+            "styles": {},
+            "classes": [
+                "menu-entry"
+            ],
+            "content": ""
+        },
+    
+        "steamedFishImage": {
+            "id": "steamed-fish-image",
+            "parent": "steamed-fish-entry",
+            "htmlTag": "img",
+            "styles": {},
+            "classes": [
+                "menu-image"
+            ],
+            "src": "images/Oil-Drizzled_Steamed_Fish.webp"
+        },
+    
+        "steamedFishHeading": {
+            "id": "steamed-fish-heading",
+            "parent": "steamed-fish-entry",
+            "htmlTag": "h3",
+            "styles": {},
+            "classes": [
+                "menu-heading"
+            ],
+            "content": "Oil-Drizzled Steamed Fish"
+        },
+    
+        "steamedFishDescription": {
+            "id": "steamed-fish-description",
+            "parent": "steamed-fish-entry",
+            "htmlTag": "p",
+            "styles": {},
+            "classes": [
+                "menu-description"
+            ],
+            "content": "My finest fresh caught fish, succulently steamed and lacquered in sweet oils."
+        },
+    
+        "veggieStewEntry": {
+            "id": "veggie-stew-entry",
+            "parent": "food-menu",
+            "htmlTag": "article",
+            "styles": {},
+            "classes": [
+                "menu-entry"
+            ],
+            "content": ""
+        },
+    
+        "veggieStewImage": {
+            "id": "veggie-stew-image",
+            "parent": "veggie-stew-entry",
+            "htmlTag": "img",
+            "styles": {},
+            "classes": [
+                "menu-image"
+            ],
+            "src": "images/Veggie_Medley_Stew.webp"
+        },
+    
+        "veggieStewHeading": {
+            "id": "veggie-stew-heading",
+            "parent": "veggie-stew-entry",
+            "htmlTag": "h3",
+            "styles": {},
+            "classes": [
+                "menu-heading"
+            ],
+            "content": "Veggie Medley Stew"
+        },
+    
+        "veggieStewDescription": {
+            "id": "veggie-stew-description",
+            "parent": "veggie-stew-entry",
+            "htmlTag": "p",
+            "styles": {},
+            "classes": [
+                "menu-description"
+            ],
+            "content": "A harmonious arrangement of fresh, crunchy greens, both familiar and exotic, makes for an exquisite experience."
+        }
     },
 
-    "allergyNotice": {
-        "id": "allergy-notice",
-        "parent": "content",
-        "htmlTag": "small",
-        "styles": {},
-        "content": "Please inform me if you have any allergies."
-    },
-
-    "foodMenu": {
-        "id": "food-menu",
-        "parent": "content",
-        "htmlTag": "section",
-        "styles": "flex-direction: column;",
-        "content": ""
-    },
-
-    "mysteryMeatEntry": {
-        "id": "mystery-meat-entry",
-        "parent": "food-menu",
-        "htmlTag": "article",
-        "styles": {},
-        "classes": [
-            "menu-entry"
-        ],
-        "content": ""
-    },
-
-    "mysteryMeatImage": {
-        "id": "mystery-meat-image",
-        "parent": "mystery-meat-entry",
-        "htmlTag": "img",
-        "styles": {},
-        "classes": [
-            "menu-image"
-        ],
-        "src": "images/Mystery_Meat_Sushi.webp"
-    },
-
-    "mysteryMeatHeading": {
-        "id": "mystery-meat-heading",
-        "parent": "mystery-meat-entry",
-        "htmlTag": "h3",
-        "styles": {},
-        "classes": [
-            "menu-heading"
-        ],
-        "content": "Mystery Meat Sushi"
-    },
-
-    "mysteryMeatDescription": {
-        "id": "mystery-meat-description",
-        "parent": "mystery-meat-entry",
-        "htmlTag": "p",
-        "styles": {},
-        "classes": [
-            "menu-description"
-        ],
-        "content": "This is my famed Mystery Meat Sushi."
-    },
-
-    "grilledTrevallyEntry": {
-        "id": "grilled-trevally-entry",
-        "parent": "food-menu",
-        "htmlTag": "article",
-        "styles": {},
-        "classes": [
-            "menu-entry"
-        ],
-        "content": ""
-    },
-
-    "grilledTrevallyImage": {
-        "id": "grilld-trevally-image",
-        "parent": "grilled-trevally-entry",
-        "htmlTag": "img",
-        "styles": {},
-        "classes": [
-            "menu-image"
-        ],
-        "src": "images/Grilled_Wild_Trevally.webp"
-    },
-
-    "grilledTrevallyHeading": {
-        "id": "grilled-trevally-heading",
-        "parent": "grilled-trevally-entry",
-        "htmlTag": "h3",
-        "styles": {},
-        "classes": [
-            "menu-heading"
-        ],
-        "content": "Grilled Wild Trevally"
-    },
-
-    "grilledTrevallyDescription": {
-        "id": "grilled-trevally-description",
-        "parent": "grilled-trevally-entry",
-        "htmlTag": "p",
-        "styles": {},
-        "classes": [
-            "menu-description"
-        ],
-        "content": "This is my famed Grilled Wild Trevally. None of that farm-reared business, I guarantee."
-    },
-
-    "steamedFishEntry": {
-        "id": "steamed-fish-entry",
-        "parent": "food-menu",
-        "htmlTag": "article",
-        "styles": {},
-        "classes": [
-            "menu-entry"
-        ],
-        "content": ""
-    },
-
-    "steamedFishImage": {
-        "id": "steamed-fish-image",
-        "parent": "steamed-fish-entry",
-        "htmlTag": "img",
-        "styles": {},
-        "classes": [
-            "menu-image"
-        ],
-        "src": "images/Oil-Drizzled_Steamed_Fish.webp"
-    },
-
-    "steamedFishHeading": {
-        "id": "steamed-fish-heading",
-        "parent": "steamed-fish-entry",
-        "htmlTag": "h3",
-        "styles": {},
-        "classes": [
-            "menu-heading"
-        ],
-        "content": "Oil-Drizzled Steamed Fish"
-    },
-
-    "steamedFishDescription": {
-        "id": "steamed-fish-description",
-        "parent": "steamed-fish-entry",
-        "htmlTag": "p",
-        "styles": {},
-        "classes": [
-            "menu-description"
-        ],
-        "content": "My finest fresh caught fish, succulently steamed and lacquered in sweet oils."
-    },
-
-    "veggieStewEntry": {
-        "id": "veggie-stew-entry",
-        "parent": "food-menu",
-        "htmlTag": "article",
-        "styles": {},
-        "classes": [
-            "menu-entry"
-        ],
-        "content": ""
-    },
-
-    "veggieStewImage": {
-        "id": "veggie-stew-image",
-        "parent": "veggie-stew-entry",
-        "htmlTag": "img",
-        "styles": {},
-        "classes": [
-            "menu-image"
-        ],
-        "src": "images/Veggie_Medley_Stew.webp"
-    },
-
-    "veggieStewHeading": {
-        "id": "veggie-stew-heading",
-        "parent": "veggie-stew-entry",
-        "htmlTag": "h3",
-        "styles": {},
-        "classes": [
-            "menu-heading"
-        ],
-        "content": "Veggie Medley Stew"
-    },
-
-    "veggieStewDescription": {
-        "id": "veggie-stew-description",
-        "parent": "veggie-stew-entry",
-        "htmlTag": "p",
-        "styles": {},
-        "classes": [
-            "menu-description"
-        ],
-        "content": "A harmonious arrangement of fresh, crunchy greens, both familiar and exotic, makes for an exquisite experience."
+    "meta": {
+        
     }
 
 }
