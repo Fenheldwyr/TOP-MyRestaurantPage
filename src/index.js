@@ -106,6 +106,7 @@ function makeHTMLElement(elementData) {
     const content = elementData.content;
     const src = elementData.src;
     const classes = elementData.classes;
+    const href = elementData.href;
 
     const element = document.createElement(htmlTag);
     element.setAttribute("id", id);
@@ -120,6 +121,10 @@ function makeHTMLElement(elementData) {
         for (const key in classes) {
             element.classList.add(classes[key]);
         }
+    }
+    if (htmlTag === "a" && href) {
+        element.setAttribute("target", "BLANK");
+        element.setAttribute("href", href);
     }
     return element;
 }
