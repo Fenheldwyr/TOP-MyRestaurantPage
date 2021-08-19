@@ -44,6 +44,12 @@
     },
 
     "meta": {
-
+        "background": {
+            "parent": "body",
+            "image": "./images/brotherhood_eating.webp",
+            "classes": [
+                "background-image"
+            ]
+        }
     }
 }
