@@ -68,7 +68,7 @@ class navigation {
         // don't bother generating the page if it is already on display
         if (this.activePage === navButtonObj.ID) return; 
         const clearedDiv = this.#deleteAllChildren();
-        this.#populateTab(navButtonObj.pageJSON);
+        this.#populateTab(navButtonObj.pageJSON.elements);
         this.activePage = navButtonObj.ID;
         return this.contentDiv;
     }
