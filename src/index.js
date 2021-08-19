@@ -68,9 +68,26 @@ class navigation {
         // don't bother generating the page if it is already on display
         if (this.activePage === navButtonObj.ID) return; 
         const clearedDiv = this.#deleteAllChildren();
+        if (Object.keys(navButtonObj.pageJSON.meta).length > 0) {
+            this.#setSiteProperties(navButtonObj.pageJSON.meta);
+        }
         this.#populateTab(navButtonObj.pageJSON.elements);
         this.activePage = navButtonObj.ID;
         return this.contentDiv;
+    }
+
+    #setSiteProperties(metaJSON) {
+        if ("background" in metaJSON) {
+            this.#setBackground(metaJSON.background);
+        }
+    }
+
+    #setBackground(backgroundJSON) {
+        const parent = document.querySelector(backgroundJSON.parent);
+        if ("image" in backgroundJSON) {
+            const url = backgroundJSON.image;
+            parent.setAttribute("style", `background-image: url(${url})`);
+        }
     }
 
     /**
