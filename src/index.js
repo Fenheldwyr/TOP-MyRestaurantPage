@@ -33,9 +33,7 @@ class navigation {
      #createButtons(navButtonData) {
         let buttons = {};
         for (const buttonData of navButtonData) {
-            const buttonGUI = document.createElement("button");
-            buttonGUI.setAttribute("id", buttonData.id);
-            buttonGUI.textContent = buttonData.id;
+            const buttonGUI = makeHTMLElement(buttonData);
             const buttonObj = new navButton({
                 ID: buttonData.id,
                 GUI: buttonGUI,
@@ -160,6 +158,7 @@ pageBody.appendChild(contentDiv);
 const homeButtonData = {
     id: "Home",
     content: "Home",
+    htmlTag: "button",
     pageJSON: homeJSON,
     contentDiv: contentDiv,
 }
@@ -167,6 +166,7 @@ const homeButtonData = {
 const menuButtonData = {
     id: "Menu",
     content: "Menu",
+    htmlTag: "button",
     pageJSON: menuJSON,
     contentDiv: contentDiv,
 }
@@ -174,6 +174,7 @@ const menuButtonData = {
 const contactButtonData = {
     id: "Contact",
     content: "Contact",
+    htmlTag: "button",
     pageJSON: contactJSON,
     contentDiv: contentDiv,
 }
