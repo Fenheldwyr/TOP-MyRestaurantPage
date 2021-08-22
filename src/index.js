@@ -3,83 +3,133 @@ import "./misc.css";
 import homeJSON from "./home.json";
 import menuJSON from "./menu.json";
 import contactJSON from "./contact.json";
+import navBarJSON from "./nav-bar-data.json";
 function importAll(r) {
     r.keys().forEach(r);
 }
 // imports all images
 importAll(require.context("./images/", true, /\.(png|svg|jpg|jpeg|gif|webp)$/))
 
+const _pageJSON = {
+    homeJSON: homeJSON,
+    menuJSON: menuJSON,
+    contactJSON: contactJSON,
+}
+
 class navButton {
-    constructor(navButtonData) {
-        this.ID = navButtonData.ID,
-        this.GUI = navButtonData.GUI,
-        this.pageJSON = navButtonData.pageJSON
+    constructor(data) {
+        this.id = data.id,
+        this.gui = data.gui,
+        this.pageJSON = this.#getPageJSON(data.pageJSON);
+    }
+
+    // retrieves a document containing element data for the page we want to display
+    #getPageJSON(id) {
+        const pageJSON = _pageJSON[id];
+        return pageJSON;
     }
 }
 
+/**
+ * @property {HTMLElement} contentDiv the container for the page's contents
+ * @property {HTMLElement} navBarDiv the container for the page's nav bar
+ * @property {Object} buttonData holds raw data about a navigation element
+ * @property {Object} buttons holds navButton objects
+ * @property {String} activePage tells us what page is currently displayed
+ * @property {Object} gui stores nav button GUIs in the order they should be shown
+ */
 class navigation {
     constructor(navigationData) {
-        this.contentDiv = navigationData.contentDiv;
-        this.navButtonData = navigationData.navButtonData;
-        this.navButtons = this.#createButtons(this.navButtonData);
-        this.activePage = this.navButtons.homeButton;
+        this.contentDiv = document.querySelector(navigationData.contentDiv);
+        this.navBarDiv = document.querySelector("nav");
+        this.buttonData = navigationData.buttonData;
+        this.buttons = {};
+        this.activePage = null;
+
+        for (const buttons in this.buttonData) {
+            const buttonObj = this.#createNavElement(this.buttonData[buttons]);
+            if (buttonObj) {
+                this.buttons[buttonObj.id] = buttonObj;
+            }
+        };
+
+        this.gui = [
+            this.buttons.home.gui,
+            this.buttons.menu.gui,
+            this.buttons.contact.gui
+        ];
     }
 
     /**
-     * 
-     * @param {object} navButtonData 
-     * @returns {HTMLElement}
+     * displays the navigation bar and its elements
+     * @param {HTMLElement} parentElement 
      */
-     #createButtons(navButtonData) {
-        let buttons = {};
-        for (const buttonData of navButtonData) {
-            const buttonGUI = makeHTMLElement(buttonData);
-            const buttonObj = new navButton({
-                ID: buttonData.id,
-                GUI: buttonGUI,
-                pageJSON: buttonData.pageJSON,
-            })
-            this.#setFunction(buttonGUI, buttonObj);
-            buttons[buttonData.id] = buttonObj;
+    showNavBar(parentElement = this.navBarDiv) {
+        for (const elements in this.gui) {
+            parentElement.appendChild(this.gui[elements]);
         }
-        return buttons;
+    }
+
+    /**
+     * generates data required to make a navButton object
+     * @param {Object} elementData the element's configuration information 
+     * @returns {navButton} 
+     */
+     #createNavElement(elementData) {
+        const buttonGUI = makeHTMLElement(elementData);
+        const buttonObj = new navButton({
+            id: elementData.id,
+            gui: buttonGUI,
+            pageJSON: elementData.pageJSON
+        })
+        this.#setFunction(buttonGUI, buttonObj);
+        return buttonObj;
     }
 
     /**
      * 
-     * @param {HTMLElement} navButtonNode 
-     * @param {navButton} navButtonObj 
+     * @param {HTMLElement} navGUI the nav button's GUI element
+     * @param {navButton} navObj the nav button GUI's owner object
      */
-    #setFunction(navButtonNode, navButtonObj) {
-        navButtonNode.addEventListener("click", (e) => {
-            this.#switchTabs(e, navButtonObj);
+    #setFunction(navGUI, navObj) {
+        navGUI.addEventListener("click", (e) => {
+            this.#switchTabs(e, navObj);
         })
     };
 
     /**
-     * updates our website's content with information relevant to the page they have navigated to
-     * @param {Event} e 
-     * @returns {HTMLElement}
+     * before we load a page, check whether we need to carry out additional styling work beforehand, and whether to load the page in the first place
+     * @param {Event} e the event trigger's information 
+     * @param {navButton} navObj the page we are trying to show 
+     * @returns {HTMLElement} 
      */
-    #switchTabs(e, navButtonObj) {
+    #switchTabs(e, navObj) {
         console.log(e);
         // don't bother generating the page if it is already on display
-        if (this.activePage === navButtonObj.ID) return; 
+        if (this.activePage === navObj.id) return; 
         const clearedDiv = this.#deleteAllChildren();
-        if (Object.keys(navButtonObj.pageJSON.meta).length > 0) {
-            this.#setSiteProperties(navButtonObj.pageJSON.meta);
+        if (Object.keys(navObj.pageJSON.meta).length > 0) {
+            this.#setSiteProperties(navObj.pageJSON.meta);
         }
-        this.#populateTab(navButtonObj.pageJSON.elements);
-        this.activePage = navButtonObj.ID;
+        this.#populateTab(navObj.pageJSON.elements);
+        this.activePage = navObj.id;
         return this.contentDiv;
     }
 
+    /**
+     * sets styles that apply to the whole page, e.g. background images
+     * @param {Object} metaJSON configuration for the page
+     */
     #setSiteProperties(metaJSON) {
         if ("background" in metaJSON) {
             this.#setBackground(metaJSON.background);
         }
     }
 
+    /**
+     * sets a wallpaper to fit on the entire page
+     * @param {Object} backgroundJSON 
+     */
     #setBackground(backgroundJSON) {
         const parent = document.querySelector(backgroundJSON.parent);
         if ("image" in backgroundJSON) {
@@ -89,7 +139,8 @@ class navigation {
     }
 
     /**
-     * displays our page's contents
+     * carries out the work needed to generate a web page
+     * @param {Object} pageJSON the content and HTML element information needed to display a page
      */
     #populateTab(pageJSON) {
         for (const elementKey in pageJSON) {
@@ -114,6 +165,11 @@ class navigation {
     }
 }
 
+/**
+ * generates a HTML element from data we have defined in a JSON file
+ * @param {Object} elementData configuration data for the element  
+ * @returns {HTMLElement}
+ */
 function makeHTMLElement(elementData) {
     const id = elementData.id;
     const htmlTag = elementData.htmlTag;
@@ -155,41 +211,5 @@ contentDiv.setAttribute("id", "content");
 pageBody.appendChild(navDiv);
 pageBody.appendChild(contentDiv);
 
-const homeButtonData = {
-    id: "Home",
-    content: "Home",
-    htmlTag: "button",
-    pageJSON: homeJSON,
-    contentDiv: contentDiv,
-}
-
-const menuButtonData = {
-    id: "Menu",
-    content: "Menu",
-    htmlTag: "button",
-    pageJSON: menuJSON,
-    contentDiv: contentDiv,
-}
-
-const contactButtonData = {
-    id: "Contact",
-    content: "Contact",
-    htmlTag: "button",
-    pageJSON: contactJSON,
-    contentDiv: contentDiv,
-}
-
-const navBarData = {
-    contentDiv: contentDiv,
-    navButtonData: [
-        homeButtonData,
-        menuButtonData,
-        contactButtonData
-    ],
-}
-
-const navigationBar = new navigation(navBarData);
-
-navDiv.appendChild(navigationBar.navButtons.Home.GUI);
-navDiv.appendChild(navigationBar.navButtons.Menu.GUI);
-navDiv.appendChild(navigationBar.navButtons.Contact.GUI);
+const navigationBar = new navigation(navBarJSON);
+navigationBar.showNavBar();

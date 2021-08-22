@@ -1,0 +1,26 @@
+{
+    "buttonData": {
+        "home": {
+            "id": "home",
+            "content": "Home",
+            "htmlTag": "button",
+            "pageJSON": "homeJSON"
+        },
+        
+        "menu": {
+            "id": "menu",
+            "content": "Menu",
+            "htmlTag": "button",
+            "pageJSON": "menuJSON"
+        },
+        
+        "contact": {
+            "id": "contact",
+            "content": "Contact",
+            "htmlTag": "button",
+            "pageJSON": "contactJSON"
+        }
+    },
+
+    "contentDiv": "#content"
+}
