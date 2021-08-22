@@ -231,8 +231,5 @@ pageBody.appendChild(contentDiv);
 
 const navigationBar = new navigation(navBarJSON);
 navigationBar.showNavBar();
-<<<<<<< HEAD
-=======
 
 navigationBar.showPage("home");
->>>>>>> load-home-by-default
