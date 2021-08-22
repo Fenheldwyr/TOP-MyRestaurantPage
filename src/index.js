@@ -131,7 +131,7 @@ function makeHTMLElement(elementData) {
     if (src) {
         element.setAttribute("src", src);
     }
-    if (Object.keys(styles).length > 0) {
+    if (styles && Object.keys(styles).length > 0) {
         element.setAttribute("style", styles);
     }
     if (classes) {
