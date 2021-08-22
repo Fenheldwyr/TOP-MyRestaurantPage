@@ -4,6 +4,8 @@ import homeJSON from "./home.json";
 import menuJSON from "./menu.json";
 import contactJSON from "./contact.json";
 import navBarJSON from "./nav-bar-data.json";
+import legalJSON from "./licensing.json";
+
 function importAll(r) {
     r.keys().forEach(r);
 }
@@ -219,17 +221,24 @@ function makeHTMLElement(elementData) {
 }
 
 const pageBody = document.querySelector("body");
-
+const htmlBody = document.querySelector("html");
 const navDiv = document.createElement("nav");
 navDiv.setAttribute("id", "nav");
-
 const contentDiv = document.createElement("main");
 contentDiv.setAttribute("id", "content");
+const footerDiv = document.createElement("footer");
+footerDiv.setAttribute("id", "footer")
 
 pageBody.appendChild(navDiv);
 pageBody.appendChild(contentDiv);
+pageBody.appendChild(footerDiv);
 
 const navigationBar = new navigation(navBarJSON);
 navigationBar.showNavBar();
-
 navigationBar.showPage("home");
+
+for (const keys in legalJSON) {
+    const legalInfo = legalJSON[keys];
+    const legalInfoElement = makeHTMLElement(legalInfo);
+    footerDiv.appendChild(legalInfoElement);
+}

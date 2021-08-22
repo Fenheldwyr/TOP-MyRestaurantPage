@@ -37,3 +37,9 @@ body {
     color: white;
     background: #000000b3;
 }
+
+#footer {
+    color: white;
+    font-size: 0.75em;
+    bottom: 0;
+}

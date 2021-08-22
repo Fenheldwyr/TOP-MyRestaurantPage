@@ -1,0 +1,19 @@
+{
+    "homePage": {
+        "htmlTag": "p",
+        "parent": "html",
+        "content": "Background image concept art by Igor Staritsin, 2016, Senior Concept Artist at ILM. Artstation: https://www.artstation.com/igorstaritsin"
+    },
+
+    "food": {
+        "htmlTag": "p",
+        "parent": "html",
+        "content": "All screenshots of food are taken from Final Fantasy XV, copyright Square Enix."
+    },
+
+    "contactPage": {
+        "htmlTag": "p",
+        "parent": "html",
+        "content": "Contact screen background image taken from Final Fantasy XV Brotherhood, copyright Square Enix." 
+    }
+}
