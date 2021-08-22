@@ -71,6 +71,24 @@ class navigation {
     }
 
     /**
+     * 
+     * @param {String} name name of page to be shown 
+     * @returns {navButton}
+     */
+    showPage(name) {
+        if (!name) {
+            console.error("page name not provided");
+            return;
+        }
+        if (!(name.toLowerCase() in this.buttons)) {
+            console.error("page name not found");
+            return;
+        }
+        this.#switchTabs(null, this.buttons[name]);
+        return this.buttons[name];
+    }
+
+    /**
      * generates data required to make a navButton object
      * @param {Object} elementData the element's configuration information 
      * @returns {navButton} 
@@ -213,3 +231,5 @@ pageBody.appendChild(contentDiv);
 
 const navigationBar = new navigation(navBarJSON);
 navigationBar.showNavBar();
+
+navigationBar.showPage("home");
