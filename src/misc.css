@@ -35,13 +35,17 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: 0;
 }
 
-#content {
+#contentContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+main {
     color: white;
     background: #000000c7;
-    flex: 1 0 auto;
 }
 
 button {
