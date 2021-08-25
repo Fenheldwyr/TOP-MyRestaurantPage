@@ -11,7 +11,8 @@ module.exports = {
     devtool: "inline-source-map",
     plugins: [
         new HtmlWebpackPlugin({
-            title: "My Restaurant",
+            template: "src/index.ejs",
+            title: "Ignis' Good Eatin'",
             favicon: "./src/favicon/favicon.ico",
         }),
     ],
