@@ -4,21 +4,24 @@
             "id": "home",
             "content": "Home",
             "htmlTag": "button",
-            "pageJSON": "homeJSON"
+            "pageJSON": "homeJSON",
+            "accesskey": "h"
         },
         
         "menu": {
             "id": "menu",
             "content": "Menu",
             "htmlTag": "button",
-            "pageJSON": "menuJSON"
+            "pageJSON": "menuJSON",
+            "accesskey": "m"
         },
         
         "contact": {
             "id": "contact",
             "content": "Contact",
             "htmlTag": "button",
-            "pageJSON": "contactJSON"
+            "pageJSON": "contactJSON",
+            "accesskey": "c"
         }
     },
 

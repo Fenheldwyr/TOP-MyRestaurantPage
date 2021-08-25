@@ -202,6 +202,7 @@ function makeHTMLElement(elementData) {
     const classes = elementData.classes;
     const href = elementData.href;
     const altText = elementData.alt;
+    const accesskey = elementData.accesskey;
 
     const element = document.createElement(htmlTag);
     element.setAttribute("id", id);
@@ -223,6 +224,9 @@ function makeHTMLElement(elementData) {
     }
     if (altText) { 
         element.setAttribute("alt", altText);
+    }
+    if (accesskey) {
+        element.setAttribute("accesskey", accesskey)
     }
     return element;
 }
