@@ -35,11 +35,20 @@ body {
 
 #content {
     color: white;
-    background: #000000b3;
+    background: #000000c7;
+}
+
+button {
+    color: #7AB7FF;
+    background: #000000c7
 }
 
 #footer {
     color: white;
     font-size: 0.75em;
     bottom: 0;
+}
+
+a {
+    color: #7AB7FF;
 }
