@@ -43,7 +43,8 @@
             "classes": [
                 "menu-image"
             ],
-            "src": "images/Mystery_Meat_Sushi.webp"
+            "src": "images/Mystery_Meat_Sushi.webp",
+            "alt": "Two slabs of meat bound snugly in seaweed, served on a leaf."
         },
     
         "mysteryMeatHeading": {
@@ -87,7 +88,8 @@
             "classes": [
                 "menu-image"
             ],
-            "src": "images/Grilled_Wild_Trevally.webp"
+            "src": "images/Grilled_Wild_Trevally.webp",
+            "alt": "Succulent, well-grilled trevally atop a bed of soft greens."
         },
     
         "grilledTrevallyHeading": {
@@ -131,7 +133,8 @@
             "classes": [
                 "menu-image"
             ],
-            "src": "images/Oil-Drizzled_Steamed_Fish.webp"
+            "src": "images/Oil-Drizzled_Steamed_Fish.webp",
+            "alt": "Generous serving of tender, seasoned fish resting in rich oil."
         },
     
         "steamedFishHeading": {
@@ -175,7 +178,8 @@
             "classes": [
                 "menu-image"
             ],
-            "src": "images/Veggie_Medley_Stew.webp"
+            "src": "images/Veggie_Medley_Stew.webp",
+            "alt": "Steaming bowl of mushrooms, onions, peppers, and greens in thick broth."
         },
     
         "veggieStewHeading": {
@@ -207,7 +211,8 @@
             "image": "./images/restaurant-blur.webp",
             "classes": [
                 "background-image"
-            ]
+            ],
+            "alt": "A warmly lit restaurant table with a plate of charred kebabs in sticky sauce in focus."
         }
     }
 

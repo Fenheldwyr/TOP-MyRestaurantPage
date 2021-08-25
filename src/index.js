@@ -156,6 +156,9 @@ class navigation {
             const url = backgroundJSON.image;
             parent.setAttribute("style", `background-image: url(${url})`);
         }
+        if ("alt" in backgroundJSON) {
+            parent.setAttribute("alt", backgroundJSON.alt);
+        }
     }
 
     /**
@@ -198,6 +201,7 @@ function makeHTMLElement(elementData) {
     const src = elementData.src;
     const classes = elementData.classes;
     const href = elementData.href;
+    const altText = elementData.alt;
 
     const element = document.createElement(htmlTag);
     element.setAttribute("id", id);
@@ -216,6 +220,9 @@ function makeHTMLElement(elementData) {
     if (htmlTag === "a" && href) {
         element.setAttribute("target", "BLANK");
         element.setAttribute("href", href);
+    }
+    if (altText) { 
+        element.setAttribute("alt", altText);
     }
     return element;
 }

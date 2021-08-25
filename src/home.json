@@ -47,7 +47,8 @@
             "image": "./images/igor-staritsin-ffxv-blur.jpg",
             "classes": [
                 "background-image"
-            ]
+            ],
+            "alt": "Sweeping vista showing Altissa, a grand and exotic city on the sea."
         }
     }
 }
