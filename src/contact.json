@@ -7,35 +7,43 @@
             "styles": {},
             "content": "You can get in touch with me for bookings, queries, meal/wine pairing advice, and casual chats on my social media:"
         },
-    
-        "facebookEntry": {
-            "id": "facebook-entry",
+
+        "socialMediaList": {
+            "id": "social-media-links",
             "parent": "content",
-            "htmlTag": "h3",
+            "htmlTag": "ul",
             "styles": {},
             "content": ""
         },
     
-        "facebookLink": {
+        "facebookLinkItem": {
             "id": "facebook-link",
-            "parent": "facebook-entry",
+            "parent": "social-media-links",
+            "htmlTag": "li",
+            "styles": {},
+            "content": ""
+        },
+
+        "facebookLinkURL": {
+            "id": "",
+            "parent": "facebook-link",
             "htmlTag": "a",
             "styles": {},
             "content": "Facebook",
             "href": "https://www.google.com/search?q=stick+bugs"
         },
-    
-        "twitterEntry": {
-            "id": "twitter-entry",
-            "parent": "content",
-            "htmlTag": "h3",
+
+        "twitterLinkItem": {
+            "id": "twitter-link",
+            "parent": "social-media-links",
+            "htmlTag": "li",
             "styles": {},
             "content": ""
         },
     
         "twitter-link": {
-            "id": "twitter-link",
-            "parent": "twitter-entry",
+            "id": "",
+            "parent": "twitter-link",
             "htmlTag": "a",
             "styles": {},
             "content": "Twitter",
