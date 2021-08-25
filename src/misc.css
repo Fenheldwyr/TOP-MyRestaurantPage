@@ -31,11 +31,17 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
 #content {
     color: white;
     background: #000000c7;
+    flex: 1 0 auto;
 }
 
 button {
@@ -46,7 +52,7 @@ button {
 #footer {
     color: white;
     font-size: 0.75em;
-    bottom: 0;
+    flex-shrink: 0;
 }
 
 a {

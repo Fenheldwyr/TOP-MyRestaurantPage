@@ -1,8 +1,16 @@
 {
     "elements": {
+        "contactContentDiv": {
+            "id": "main",
+            "parent": "contentContainer",
+            "htmlTag": "main",
+            "styles": {},
+            "content": ""
+        },
+
         "heading": {
             "id": "contact-header",
-            "parent": "content",
+            "parent": "main",
             "htmlTag": "h2",
             "styles": {},
             "content": "You can get in touch with me for bookings, queries, meal/wine pairing advice, and casual chats on my social media:"
@@ -10,7 +18,7 @@
 
         "socialMediaList": {
             "id": "social-media-links",
-            "parent": "content",
+            "parent": "main",
             "htmlTag": "ul",
             "styles": {},
             "content": ""

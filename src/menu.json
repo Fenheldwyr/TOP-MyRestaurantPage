@@ -1,8 +1,16 @@
 {
     "elements": {
+        "menuContentDiv": {
+            "id": "main",
+            "parent": "contentContainer",
+            "htmlTag": "main",
+            "styles": {},
+            "content": ""
+        },
+
         "heading": {
             "id": "menu-heading",
-            "parent": "content",
+            "parent": "main",
             "htmlTag": "h2",
             "styles": {},
             "content": "Here are the recipes I have come up with:"
@@ -10,7 +18,7 @@
     
         "allergyNotice": {
             "id": "allergy-notice",
-            "parent": "content",
+            "parent": "main",
             "htmlTag": "small",
             "styles": {},
             "content": "Please inform me if you have any allergies."
@@ -18,7 +26,7 @@
     
         "foodMenu": {
             "id": "food-menu",
-            "parent": "content",
+            "parent": "main",
             "htmlTag": "section",
             "styles": "flex-direction: column;",
             "content": ""

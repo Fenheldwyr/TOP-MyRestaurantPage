@@ -231,8 +231,8 @@ const pageBody = document.querySelector("body");
 const htmlBody = document.querySelector("html");
 const navDiv = document.createElement("nav");
 navDiv.setAttribute("id", "nav");
-const contentDiv = document.createElement("main");
-contentDiv.setAttribute("id", "content");
+const contentDiv = document.createElement("div");
+contentDiv.setAttribute("id", "contentContainer");
 const footerDiv = document.createElement("footer");
 footerDiv.setAttribute("id", "footer")
 
