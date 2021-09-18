@@ -5,6 +5,7 @@ import menuJSON from "./menu.json";
 import contactJSON from "./contact.json";
 import navBarJSON from "./nav-bar-data.json";
 import legalJSON from "./licensing.json";
+import "./style.css";
 
 function importAll(r) {
     r.keys().forEach(r);
